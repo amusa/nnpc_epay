@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns="http://www.w3.org/1999/xhtml">
+
+    <ui:define name="content">
+        <p:messages id="msg" showSummary="true" globalOnly="true" showDetail="true"/>
+
+        <h:form>
+
+            <p:panel style="width: 604px">
+                <h:panelGrid columns="3" >
+                    <h:outputText value="Staff ID"/>
+                    <p:inputText id="userId" value="#{payManager.userId}" title="Staff ID" required="true" requiredMessage="Staff ID is required"/>
+                    <p:message for="userId" />
+                    <h:outputText value="Pay Period"/>
+                    <p:inputText id="payperiod" value="#{payManager.payperiod}" title="Payroll Period" required="true" requiredMessage="Payroll period is required"/>
+                    <p:message for="payperiod" />
+                    <h:outputText value=""/>
+                    <p:commandButton value="Display" action="#{payManager.display}" ajax="false"
+                                     async="false"/>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+        <p:separator style="width: 550px"/>
+        <p:panel style="width: 604px;" rendered="#{payManager.display}" >
+            <h:panelGrid columns="4"   rules="rows" styleClass="paySlip" headerClass="tableHeader">
+                <f:facet name="header">
+                    <h:outputText value="e-Pay Advice" />
+                </f:facet>
+                <h:outputText value="Employee No:" style="font-weight: bold" />
+                <h:outputText value="#{payManager.employee.id}"  />
+                <h:outputText value="Name:" style="font-weight: bold" />
+                <h:outputText value="#{payManager.employee}" />
+                <h:outputText value="Grade Level:" style="font-weight: bold" />
+                <h:outputText value="#{payManager.employee.gradeLevel}" />
+                <h:outputText value="Personnel Area:" style="font-weight: bold" />
+                <h:outputText value="#{payManager.employee.personnelArea}" />
+                <h:outputText value="Position:" style="font-weight: bold" />
+                <h:outputText value="#{payManager.employee.position}" />
+                <h:outputText value="Department:" style="font-weight: bold" />
+                <h:outputText value="#{payManager.employee.dept}" />
+
+                <h:outputText value="Bank" style="font-weight: bold"/>
+                <h:outputText value="#{payManager.employee.bankn}" />
+                <h:outputText value="Account No:" style="font-weight: bold" />
+                <h:outputText value="#{payManager.employee.acctNumber}"/>
+            </h:panelGrid>
+        </p:panel>
+        <br/>
+        <p:carousel  id="paydata" rows="1" style="border-style-inner: dotted"  itemStyleClass="carousel" 
+                     rendered="#{payManager.display}" circular="true" >
+            
+            <p:column headerText="Pay Advice">
+                <ui:include src="payadvice.xhtml"/>
+            </p:column>
+            <p:column headerText="Terminal Benefits">
+                <ui:include src="terminalbenefit.xhtml"/>
+            </p:column>
+            <p:column headerText="January Dashboard" >
+                <ui:include src="upfront.xhtml"/>
+            </p:column>
+        </p:carousel>
+        <div id="barcode" >
+            <p:graphicImage value="#{payManager.barcode}" rendered="#{payManager.display}" />
+        </div>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CFX7>
+	<PANES>
+		<ITEM index="0">
+			<AXES>
+				<ITEM index="0"/>
+				<ITEM index="1"/>
+			</AXES>
+		</ITEM>
+	</PANES>
+	<AXESX>
+		<ITEM index="0"/>
+	</AXESX>
+	<ALLSERIES>
+		<GALLERYARRAY type="ChartFX.WebForms.Internal.IGalleryType[]">
+			<ITEM index="0" type="ChartFX.WebForms.Galleries.Line"/>
+		</GALLERYARRAY>
+	</ALLSERIES>
+	<SERIES>
+		<ITEM index="0"/>
+		<ITEM index="1"/>
+		<ITEM index="2"/>
+	</SERIES>
+	<BORDER assembly="ChartFX.WebForms.Adornments, Version=7.0.1500.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce" type="ChartFX.WebForms.Adornments.ImageBorder"/>
+	<BACKGROUND assembly="ChartFX.WebForms.Adornments, Version=7.0.1500.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce" type="ChartFX.WebForms.Adornments.GradientBackground">
+		<COLORS assembly="ChartFX.WebForms.Adornments, Version=7.0.1500.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce" type="ChartFX.WebForms.Adornments.GradientBackground+ColorCollection"/>
+	</BACKGROUND>
+	<ID>2474</ID>
+	<RENDERFORMAT>Image</RENDERFORMAT>
+	<JDESIGNER>
+		<WIDTH>350</WIDTH>
+		<HEIGHT>312</HEIGHT>
+	</JDESIGNER>
+</CFX7>

@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <div id="wageTypeBlock">
+        <p:fieldset legend="Earnings" style="height: 230px;border-style: dotted" >
+            <h:dataTable value="#{payManager.earningList}" var="earn"  styleClass="paySlipTable"
+                         columnClasses=",currCol"  >
+                <h:column >
+                    <h:outputText value="#{earn.description}"/>
+                </h:column>
+                <h:column  >
+                    <h:outputText value="#{earn.amount}">
+                        <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                    </h:outputText>
+                </h:column>
+            </h:dataTable>
+        </p:fieldset>
+
+    </div>
+    <div id="wageTypeBlock">
+        <p:fieldset legend="Deductions" style="height: 230px;border-style: dotted" >
+
+            <h:dataTable value="#{payManager.deductionList}" var="deduct" styleClass="paySlipTable"
+                         columnClasses=",currCol">
+                <h:column>
+                    <h:outputText value="#{deduct.description}"/>
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{deduct.amount}">
+                        <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                    </h:outputText>
+                </h:column>
+            </h:dataTable>
+        </p:fieldset>
+    </div>
+
+    <div id="summary">
+
+        <h:panelGrid columns="5" style="width: 100%" columnClasses=", currCol, ,,currCol">
+            <h:outputText value="Total Earnings" style="font-weight: bold"/>
+            <h:outputText value="#{payManager.totalEarnings}" style="font-weight: bold">
+                <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+            </h:outputText>
+            <h:outputText value="        "/>
+            <h:outputText value="Total Deduction" style="font-weight: bold"/>
+            <h:outputText value="#{payManager.totalDeductions}" style="font-weight: bold">
+                <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+            </h:outputText>
+            <h:outputText value="        "/>
+            <h:outputText value="        "/>
+            <h:outputText value="        "/>
+            <h:outputText value="Net pay" style="font-weight: bold"/>
+            <h:outputText value="#{payManager.totalEarnings - payManager.totalDeductions}" style="font-weight: bold">
+                <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+            </h:outputText>
+        </h:panelGrid>
+        <hr style="border-style: dotted;clear: left"/>
+    </div>
+    <div id="wageTypeBlock">
+        <p:fieldset legend="Year To Date Statistics" style="height: 160px;border-style: dotted" >
+            <h:dataTable value="#{payManager.ytdStatList}" var="ytd" styleClass="paySlipTable"
+                         columnClasses=",currCol" >
+                <h:column >
+                    <h:outputText value="#{ytd.description}"/>
+                </h:column>
+                <h:column  >
+                    <h:outputText value="#{ytd.amount}">
+                        <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                    </h:outputText>
+                </h:column>
+            </h:dataTable>
+        </p:fieldset>
+
+    </div>
+    <div id="wageTypeBlock">
+        <p:fieldset legend="Loan Balances" style="height: 160px;border-style: dotted" >
+            <h:dataTable value="#{payManager.loanBalanceList}" var="loanBal" styleClass="paySlipTable"
+                         columnClasses=",currCol">
+                <h:column >
+                    <h:outputText value="#{loanBal.description}"/>
+                </h:column>
+                <h:column  >
+                    <h:outputText value="#{loanBal.amount}">
+                        <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                    </h:outputText>
+                </h:column>
+            </h:dataTable>
+        </p:fieldset>
+        <br/>
+        <div id="message">
+            <p:fieldset legend="Message" toggleable="true" style="height: 100px;">
+                <h:outputText value="Please see your bank account for lunch/confectioneries payment as applicable" />
+                <br/>
+                <h:outputText value="Note: All amounts figures are given in Nigerian Naira (NGN) currency"/>
+            </p:fieldset>
+        </div>
+    </div>
+</html>
+

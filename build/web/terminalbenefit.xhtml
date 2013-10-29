@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <div id="gaugeTable" >
+        <p:panel header="Retirement Gauge for Employee No: #{payManager.employee.id}"  style="font-size: small" styleClass="gaugePanel">
+            <h:panelGrid  columns="2" styleClass="gauge" headerClass="tableHeader" footerClass="tableFooter">
+                <f:facet name="header">
+
+                </f:facet>
+                <p:graphicImage value="#{payManager.ageChart}"  id="ageChart"/>
+                <p:graphicImage value="#{payManager.serviceChart}" id="serviceChart"/>
+                <f:facet name="footer">
+                    <h:panelGroup style="font-weight: bold" >
+                        <h:outputText value="Congratulations! Today, you have reached:" />
+                        <br/>
+                        <h:outputText value="[#{payManager.agePerc}%] of [60 Statutory age] Journey. [#{60 - payManager.employee.age}] years left" />
+                        <br/>
+                        <h:outputText value="[#{payManager.servPerc}%] of [35 Service years] Journey. [#{35 - payManager.employee.yearsOfService}] years left" />
+                    </h:panelGroup>
+
+                </f:facet>
+            </h:panelGrid>
+        </p:panel>
+        <br/>
+        <p:panel header="Terminal Benefits" styleClass="gaugePanel" style="font-size: small">
+            <h:panelGrid columns="2" styleClass="termBenefit" rules="rows" columnClasses=",currCol" rowClasses="lightBlue, white">
+                <h:outputText value="Service Years Transfered (A)"/>
+                <h:outputText value="#{payManager.employee.serviceYearsTransfered}"/>
+                <h:outputText value="Service Years in NNPC (B)"/>
+                <h:outputText value="#{payManager.employee.serviceYearsNnpc}"/>
+                <h:outputText value="Total Service Years (A+B)"/>
+                <h:outputText value="#{payManager.employee.yearsOfService}"/>
+                <h:outputText value="Gratuity Percentage"/>
+                <h:outputText value=""/>
+                <h:outputText value="Pension Percentage"/>
+                <h:outputText value=""/>
+                <h:outputText value="Consolidated Annual Salary (CAS)"/>
+                <h:outputText value="#{payManager.employee.cas}">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Annual Leave Allowance"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Annual Meal Allowance"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Annual Productivity Allowance"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Annual Gift Voucher"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Annual Rent Subsidy"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Annual Security Allowance"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Total Benefits"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Gratuity Amount"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Annual Pension Amount"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Relocation Allowance"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+                <h:outputText value="Relocation Allowance"/>
+                <h:outputText value="">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+            </h:panelGrid>
+        </p:panel>
+    </div>
+</html>
+

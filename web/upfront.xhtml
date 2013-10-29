@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+
+    <p:panel header="January #{payManager.appraisal.appraisalRtPK.year} Dashboard" 
+             style="width: 98%;margin: 0 auto 0 auto;font-size: small" >
+        <h:panelGrid columns="3" styleClass="appraisal" headerClass="lightBlue" rowClasses="white, lightBlue">
+            <f:facet name="header">
+                <h:panelGroup style="font-size: medium;text-align: center">
+                    <h:outputText value="Appraisal" />
+                </h:panelGroup>
+            </f:facet>
+            <h:outputText value="Increament %" style="font-weight: bold"/>
+            <h:outputText value="Old Grade Level" style="font-weight: bold"/>
+            <h:outputText value="New Grade Level" style="font-weight: bold"/>
+            <h:outputText value="#{payManager.appraisal.increment}% of 10%"/>
+            <h:outputText value="#{payManager.appraisal.oldLevel}"/>
+            <h:outputText value="#{payManager.appraisal.newLevel}"/>
+
+            <f:facet name="footer">
+                <h:panelGroup layout="block" styleClass="appraisalGauge">
+                    <br/>
+                    <h:outputText value="Appraisal Gauge"/>
+                    <p:graphicImage value="#{payManager.appraisalChart}" />
+                </h:panelGroup>
+            </f:facet>
+        </h:panelGrid>
+
+    </p:panel>
+    <h:form>
+        <p:dataTable value="#{payManager.oneOffPmtList}" var="pmt" styleClass="upfront"
+                     emptyMessage="No up-front payment" >
+            <f:facet name="header">
+                <h:panelGroup style="font-weight: bold;font-size: small">
+                    <h:outputText value="Up-Front Payment"/>
+                </h:panelGroup>
+            </f:facet>
+            <p:column  styleClass="colLeft" headerText="Description:">
+                <h:outputText value="#{pmt.description}"/>
+            </p:column>
+            <p:column  styleClass="colRight" headerText="Amount:">
+
+                <h:outputText value="#{pmt.amount}">
+                    <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                </h:outputText>
+            </p:column>
+            <f:facet name="footer">
+                <h:panelGroup style="font-weight: bold;font-size: x-small">
+                    <h:outputText value="TOTAL NET PAY:  "/>
+                    <h:outputText value="#{payManager.netPay}">
+                        <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+                    </h:outputText>
+                </h:panelGroup>
+            </f:facet>
+
+        </p:dataTable>
+    </h:form>
+    <h:panelGrid  style="width: 98%;font-size: small;margin: 0 auto 0 auto" >
+        <f:facet name="header">
+            <h:outputText value="Distribution % of Net:"/>
+            <h:outputText value="#{payManager.netPay}">
+                <f:convertNumber currencyCode="NGN"  pattern="###, ###,###.##"/>
+            </h:outputText>
+        </f:facet>
+        <p:pieChart model="#{payManager.model}" width="280px"  height="280px" style="piechartStyle"
+                    styleClass="pieChart"/>
+
+    </h:panelGrid>
+</html>
+

@@ -1,0 +1,220 @@
+/* 
+    Document   : style
+    Created on : Mar 29, 2011, 6:16:51 PM
+    Author     : Ayemi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 615px;
+    margin: 0 auto 0 auto;
+    color: #444;
+    background-image: url(../images/background.jpg);
+    background: url(../images/background.jpg) no-repeat 28px 28px;
+}
+#main {
+    background: #f7f7e9;
+
+}
+#header {
+
+
+    /*background: url(../images/roadmap.png) no-repeat 28px 28px; */
+}
+
+#content{
+    width: 100%;
+}
+.carousel{
+    margin: 0 auto 0 auto;
+    height:800px;
+    width:600px;
+    border-style: dotted;
+}
+.pieChart{
+
+    margin: -5px auto 0 auto;
+}
+.gaugePanel{
+    font-size: small;
+    width: 590px;
+    margin:  auto;
+    border-style: dotted;
+}
+.gauge{
+    width: 450px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+.appraisal{
+    width: 500px;
+    font-size: x-small;
+    margin: 0 auto 0 auto;
+}
+.appraisalGauge{
+    width: 300px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    font-weight: bold;
+}
+.paySlip{
+
+    width: 100%;
+    text-align: left;
+    font-size: x-small;
+    margin: 0 auto 0 auto;
+}
+.paySlip tr{
+    border: dotted 1px ;
+}
+.termBenefit{
+    width: 565px;
+   
+    margin: 0 auto 0 auto;
+}
+.termBenefit tr{
+    border: dotted 1px ;
+}
+.upfront{
+    width: 590px;
+    margin: 10px auto 10px auto;
+    font-size: smaller;
+}
+.upfront tr{
+
+
+}
+.upfront td{
+
+    padding: 0;
+}
+
+#paydata{
+
+}
+#gaugeTable{
+    width: 600px;
+    margin: 0 auto 0 auto;
+
+}
+.paySlipTable{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: x-small;
+
+}
+.currCol{
+    text-align: right;
+}
+.colRight{
+    font-size: x-small;
+    text-align: right;
+}
+.colLeft{
+    font-size: x-small;
+    text-align: left;
+}
+table {
+
+    border-spacing: 0;
+
+
+
+}
+td{
+    text-align: left;
+    font-size: x-small;
+
+}
+
+#earningsColumn {
+    margin-left: 10px;
+    text-align: left;
+    height: 200px;
+    width: 280px;
+    float: left;
+    font-size: x-small;
+
+}
+
+#deductionsColumn {
+    margin-left: 10px;
+    text-align: left;
+    height: 200px;
+    width: 280px;
+    float: left;
+    font-size: x-small;
+
+
+}
+#wageTypeBlock{
+    margin-left: 10px;
+    text-align: left;
+
+    width: 280px;
+    float: left;
+    font-size: x-small;
+}
+.tableHeader{
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    
+    background-color: green ;
+    height: 30px;
+
+    /*green #ccffcc */
+    color: yellow;
+}
+.tableFooter{
+    text-align: center;
+    width: 100%;
+    font-size: small;
+}
+#message{
+    margin-top: 50px;
+    font-style: italic;
+    width: 570px;
+    border: 1px;    
+    float: right;
+}
+#summary{
+    clear: left;
+    width: 560px;
+    margin-left: 10px;
+}
+#footer {
+
+    clear: left;
+}
+
+/* general styles */
+
+#singleColumn {
+    margin: 20px 30px;
+    text-align: left;
+}
+
+#centerColumn{
+    width: 600px;
+    margin: 0 auto 0 auto;
+}
+
+.reallySmallText { font-size: xx-small }
+
+#msg{
+    font-size: x-small;
+    width: 100%;
+}
+#barcode{
+    clear :left;
+    width: 300px;
+
+}
+
+.lightBlue { background-color: #edf8f7 }
+
+.white { background-color: #fff }
